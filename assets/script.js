@@ -1,5 +1,48 @@
 
 const projects = {
+  pdb12v:{
+    icon:"🔌", title:"Power Distribution Board — 12V Input (3.3V / 5V / 6V)",
+    client:"Power Electronics · PCB Design",
+    desc:"Multi-rail power distribution board designed in KiCad to regulate a 12V DC input into three independent, high-current output rails: 3.3V, 5.0V, and 6.0V. Each rail utilises the Texas Instruments TPS565208 synchronous buck converter IC to deliver up to 5A maximum load. The layout features heavy copper pours for thermal management, input/output decoupling filter capacitors to minimise output ripple, and individual status indicators.",
+    specs:[
+      {l:"Input Voltage",v:"12V"},
+      {l:"Output Rails",v:"3.3V, 5V, 6V"},
+      {l:"Max Current",v:"5A per rail"},
+      {l:"Regulator IC",v:"TI TPS565208"},
+      {l:"Topology",v:"Synchronous Buck"},
+      {l:"Tool",v:"KiCad"},
+    ],
+    tags:["TPS565208","KiCad","Power Distribution","Multi-Rail","5A Max","Assembled & Tested"],
+    tagColors:["yellow","","blue","gray","pro",""],
+    images:[
+      "assets/Screenshot 2026-06-23 151632 (1).png",
+      "assets/Screenshot 2026-06-23 151706.png",
+      "assets/Screenshot 2026-06-23 152048 - Copy (1).png",
+      "assets/Screenshot 2026-06-23 155324.png"
+    ],
+    link:"https://github.com/AMAR124595"
+  },
+  loradisaster:{
+    icon:"📡", title:"Real-Time Disaster Response with LoRa: A Multi-Sensor Approach",
+    client:"Embedded Systems & IoT · PCB Design",
+    desc:"A comprehensive disaster response system featuring a custom-designed PCB and a multi-sensor node. Utilises LoRa long-range wireless communication to transmit real-time telemetry data (environmental sensors, GPS/location, and critical warning signals) to a central gateway. Designed in KiCad with robust power supply regulation, low-power sleep modes, and optimal ground plane partitioning for RF performance.",
+    specs:[
+      {l:"MCU",v:"ESP32"},
+      {l:"Wireless",v:"LoRa (SX1276 / RFM95W)"},
+      {l:"Sensors",v:"Temperature, Humidity, Gas, Barometric Pressure"},
+      {l:"Tool",v:"KiCad"},
+      {l:"PCB Type",v:"Custom PCB Design & Assembly"},
+    ],
+    tags:["LoRa","ESP32","KiCad","PCB Design","Sensors","IoT","Disaster Response"],
+    tagColors:["blue","blue","","yellow","gray","","pro"],
+    images:[
+      "assets/IMG-20260624-WA0008.jpg.jpeg",
+      "assets/IMG-20260624-WA0009.jpg.jpeg",
+      "assets/IMG-20260624-WA0012.jpg.jpeg",
+      "assets/IMG-20260624-WA0015.jpg.jpeg"
+    ],
+    link:"https://github.com/AMAR124595"
+  },
   buck5v:{
     icon:"⚡", title:"5V / 3A Buck Converter — TPS5430",
     client:"Power Electronics · Freelance",
@@ -39,7 +82,14 @@ const projects = {
     ],
     tags:["KiCad","4-Layer PCB","TPS51397A","Synchronous","10A"],
     tagColors:["","","yellow","","gray"],
-    images:[],
+    images:[
+      "assets/PCB.png",
+      "assets/Layout_Drawing.png",
+      "assets/Top_layer.png",
+      "assets/In_1.png",
+      "assets/In2.png",
+      "assets/Bottom_Layer.png"
+    ],
     link:"https://github.com/AMAR124595/5V_10A-Buck-converter"
   },
   buck3v3:{
@@ -173,8 +223,9 @@ const projects = {
     ],
     tags:["CubeSat","Space","Telemetry","Sensors","Data Logging"],
     tagColors:["yellow","gray","blue","","gray"],
-    images:[],
-    link:"https://github.com/AMAR124595/CUBSAT"
+    images:["assets/Screenshot_20260623_140616_Photos.jpg.jpeg"],
+    embed:`<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7234093794793533440" height="650" width="100%" style="max-width: 504px; height: 650px; border: none; border-radius: 8px;" allowfullscreen="" title="Embedded post"></iframe>`,
+    link:"https://www.linkedin.com/posts/amar-gangadhar-6b25a5267_cubesat-spacetech-satellite-activity-7234093794793533440-_h4-?utm_source=share&utm_medium=member_desktop"
   },
   wifirecon:{
     icon:"📶", title:"ESP32 Wi-Fi Auto-Reconnect + Firebase",
@@ -243,12 +294,18 @@ function openModal(id){
   });
   tagsHTML += "</div>";
 
+  let embedHTML = "";
+  if(p.embed){
+    embedHTML = `<div class="modal-embed" style="margin-bottom:1.6rem; width:100%; display:flex; justify-content:center;">${p.embed}</div>`;
+  }
+
   document.getElementById("modalBody").innerHTML = `
     ${galleryHTML}
     <div class="modal-icon">${p.icon}</div>
     <div class="modal-title">${p.title}</div>
     <div class="modal-client">// ${p.client}</div>
     <div class="modal-desc">${p.desc}</div>
+    ${embedHTML}
     ${specsHTML}
     ${tagsHTML}
     <div class="modal-actions">

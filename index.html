@@ -57,11 +57,11 @@
         
         <div class="hero-stats">
           <div class="stat">
-            <div class="stat-num">16+</div>
+            <div class="stat-num">18+</div>
             <div class="stat-lbl">PROJECTS</div>
           </div>
           <div class="stat">
-            <div class="stat-num">4+</div>
+            <div class="stat-num">6+</div>
             <div class="stat-lbl">PCB DESIGNS</div>
           </div>
           <div class="stat">
@@ -254,6 +254,54 @@
 
     <div class="freelance-grid">
 
+      <!-- Power Distribution Board Freelance Card -->
+      <div class="freelance-card" onclick="openModal('pdb12v')">
+        <div class="fl-img-wrap">
+          <img class="fl-img" src="assets/Screenshot 2026-06-23 151632 (1).png" alt="Power Distribution Board 12V"/>
+          <span class="fl-badge">DELIVERED</span>
+        </div>
+        <div class="fl-body">
+          <div class="fl-meta"><span class="fl-client">// Power Electronics · TI TPS565208</span></div>
+          <h3>Power Distribution Board — 12V Input (3.3V/5V/6V at 5A)</h3>
+          <p>Multi-rail power distribution board regulating three independent rails at 5A output each using TPS565208.</p>
+          <div class="project-tags">
+            <span class="pb yellow">TPS565208</span>
+            <span class="pb">KiCad</span>
+            <span class="pb gray">Multi-Rail</span>
+            <span class="pb pro">5A Max</span>
+          </div>
+        </div>
+        <div class="fl-images">
+          <img class="fl-thumb" src="assets/Screenshot 2026-06-23 151706.png" alt="Layout 3D" onclick="event.stopPropagation();openLightbox(this.src)"/>
+          <img class="fl-thumb" src="assets/Screenshot 2026-06-23 152048 - Copy (1).png" alt="Schematic" onclick="event.stopPropagation();openLightbox(this.src)"/>
+          <img class="fl-thumb" src="assets/Screenshot 2026-06-23 155324.png" alt="Layout PCB" onclick="event.stopPropagation();openLightbox(this.src)"/>
+        </div>
+      </div>
+
+      <!-- Real-Time Disaster Response with LoRa Freelance Card -->
+      <div class="freelance-card" onclick="openModal('loradisaster')">
+        <div class="fl-img-wrap">
+          <img class="fl-img" src="assets/IMG-20260624-WA0008.jpg.jpeg" alt="LoRa Disaster Response PCB"/>
+          <span class="fl-badge">DELIVERED</span>
+        </div>
+        <div class="fl-body">
+          <div class="fl-meta"><span class="fl-client">// Embedded Systems & IoT · Custom PCB</span></div>
+          <h3>Real-Time Disaster Response with LoRa: A Multi-Sensor Approach</h3>
+          <p>Custom-designed multi-sensor node PCB with LoRa wireless telemetry for long-range, real-time emergency data acquisition and tracking.</p>
+          <div class="project-tags">
+            <span class="pb blue">LoRa</span>
+            <span class="pb yellow">ESP32</span>
+            <span class="pb">KiCad</span>
+            <span class="pb gray">PCB Design</span>
+          </div>
+        </div>
+        <div class="fl-images">
+          <img class="fl-thumb" src="assets/IMG-20260624-WA0009.jpg.jpeg" alt="PCB Bottom" onclick="event.stopPropagation();openLightbox(this.src)"/>
+          <img class="fl-thumb" src="assets/IMG-20260624-WA0012.jpg.jpeg" alt="PCB Angle" onclick="event.stopPropagation();openLightbox(this.src)"/>
+          <img class="fl-thumb" src="assets/IMG-20260624-WA0015.jpg.jpeg" alt="PCB Top" onclick="event.stopPropagation();openLightbox(this.src)"/>
+        </div>
+      </div>
+
       <!-- Buck Converter Card -->
       <div class="freelance-card" onclick="openModal('buck5v')">
         <div class="fl-img-wrap">
@@ -320,9 +368,8 @@
 
       <!-- 5V 10A Sync Buck -->
       <div class="project-card" data-cat="pcb" onclick="openModal('buck10a')">
-        <div class="project-img-placeholder">
-          <!-- Power Supply Waveform/Battery SVG -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.5"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect><path d="M22 11v2M6 12h8M10 8v8"/></svg>
+        <div class="project-img-placeholder" style="overflow: hidden;">
+          <img src="assets/PCB.png" alt="5V / 10A Synchronous Buck Converter PCB" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition);"/>
         </div>
         <div class="project-body">
           <div class="project-header">
@@ -549,8 +596,8 @@
 
       <!-- CubeSat -->
       <div class="project-card" data-cat="space" onclick="openModal('cubsat')">
-        <div class="project-img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.5"><path d="M13 3A9 9 0 0 1 22 12M13 8A4 4 0 0 1 17 12M12 2v20M2 12h20M12 12m-2 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0"></path></svg>
+        <div class="project-img-placeholder" style="overflow: hidden;">
+          <img src="assets/Screenshot_20260623_140616_Photos.jpg.jpeg" alt="CubeSat Nano Satellite" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition);"/>
         </div>
         <div class="project-body">
           <div class="project-header">
